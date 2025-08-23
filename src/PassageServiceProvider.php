@@ -94,7 +94,7 @@ class PassageServiceProvider extends PackageServiceProvider
         }
 
         $options = [];
-        $handlerClass = new $handler();
+        $handlerClass = new $handler;
         if (method_exists($handlerClass, 'getOptions')) {
             return $handlerClass->getOptions();
         }

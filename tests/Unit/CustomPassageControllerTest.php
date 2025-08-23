@@ -7,7 +7,8 @@ use Morcen\Passage\PassageControllerInterface;
 describe('PassageControllerInterface Implementation', function () {
     beforeEach(function () {
         // Create a concrete implementation for testing
-        $this->controller = new class () implements PassageControllerInterface {
+        $this->controller = new class implements PassageControllerInterface
+        {
             public function getRequest(Request $request): Request
             {
                 // Example: Add authentication header
@@ -41,8 +42,8 @@ describe('PassageControllerInterface Implementation', function () {
                     'base_uri' => 'https://api.example.com/',
                     'timeout' => 60,
                     'headers' => [
-                        'User-Agent' => 'Passage/1.0'
-                    ]
+                        'User-Agent' => 'Passage/1.0',
+                    ],
                 ];
             }
         };
@@ -78,7 +79,7 @@ describe('PassageControllerInterface Implementation', function () {
         expect($transformedResponse->json())->toBe([
             'id' => 123,
             'name' => 'John',
-            'processed_by' => 'passage_controller'
+            'processed_by' => 'passage_controller',
         ]);
         expect($transformedResponse->status())->toBe(200);
     });
@@ -90,18 +91,19 @@ describe('PassageControllerInterface Implementation', function () {
             'base_uri' => 'https://api.example.com/',
             'timeout' => 60,
             'headers' => [
-                'User-Agent' => 'Passage/1.0'
-            ]
+                'User-Agent' => 'Passage/1.0',
+            ],
         ]);
     });
 
     it('handles request validation and transformation', function () {
         // Create a controller that validates and transforms requests
-        $validatorController = new class () implements PassageControllerInterface {
+        $validatorController = new class implements PassageControllerInterface
+        {
             public function getRequest(Request $request): Request
             {
                 // Validate required fields
-                if (!$request->has('required_field')) {
+                if (! $request->has('required_field')) {
                     throw new \InvalidArgumentException('Missing required field');
                 }
 
@@ -127,7 +129,7 @@ describe('PassageControllerInterface Implementation', function () {
 
         $validRequest = Request::create('/test', 'POST', [
             'required_field' => 'value',
-            'date' => '2023-01-01'
+            'date' => '2023-01-01',
         ]);
 
         $transformedRequest = $validatorController->getRequest($validRequest);
@@ -137,12 +139,14 @@ describe('PassageControllerInterface Implementation', function () {
     });
 
     it('throws exception for invalid request', function () {
-        $validatorController = new class () implements PassageControllerInterface {
+        $validatorController = new class implements PassageControllerInterface
+        {
             public function getRequest(Request $request): Request
             {
-                if (!$request->has('required_field')) {
+                if (! $request->has('required_field')) {
                     throw new \InvalidArgumentException('Missing required field');
                 }
+
                 return $request;
             }
 
@@ -164,7 +168,8 @@ describe('PassageControllerInterface Implementation', function () {
     });
 
     it('can modify response status and data', function () {
-        $responseController = new class () implements PassageControllerInterface {
+        $responseController = new class implements PassageControllerInterface
+        {
             public function getRequest(Request $request): Request
             {
                 return $request;
@@ -177,7 +182,7 @@ describe('PassageControllerInterface Implementation', function () {
                 // Add metadata to response
                 $data['meta'] = [
                     'timestamp' => \Carbon\Carbon::now()->toISOString(),
-                    'version' => '1.0'
+                    'version' => '1.0',
                 ];
 
                 $mockResponse = Mockery::mock(Response::class);

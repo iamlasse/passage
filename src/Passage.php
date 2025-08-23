@@ -2,9 +2,9 @@
 
 namespace Morcen\Passage;
 
-use Morcen\Passage\Exceptions\MissingPassageService;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
+use Morcen\Passage\Exceptions\MissingPassageService;
 
 class Passage
 {

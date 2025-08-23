@@ -6,7 +6,7 @@ use Morcen\Passage\Exceptions\MissingPassageService;
 use Morcen\Passage\Passage;
 
 beforeEach(function () {
-    $this->passage = new Passage();
+    $this->passage = new Passage;
 });
 
 describe('Passage', function () {

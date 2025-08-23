@@ -17,9 +17,9 @@ describe('Passage Integration Tests', function () {
             'passage.services' => [
                 'slow' => [
                     'base_uri' => 'https://slow.api.com/',
-                    'timeout' => 1 // 1 second timeout
-                ]
-            ]
+                    'timeout' => 1, // 1 second timeout
+                ],
+            ],
         ]);
 
         // This test verifies that configuration can be set without errors

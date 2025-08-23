@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Morcen\Passage\Services\PassageService;
 
 beforeEach(function () {
-    $this->service = new PassageService();
+    $this->service = new PassageService;
 });
 
 describe('PassageService', function () {
