@@ -2,6 +2,16 @@
 
 All notable changes to `passage` will be documented in this file.
 
+## v1.2.4 - 2025-08-23
+
+### What's Changed
+
+* Get service via Passage Facade by @morcen in https://github.com/morcen/passage/pull/12
+* Bump actions/checkout from 3 to 4 by @dependabot[bot] in https://github.com/morcen/passage/pull/13
+* Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot[bot] in https://github.com/morcen/passage/pull/14
+
+**Full Changelog**: https://github.com/morcen/passage/compare/v1.2.3...v1.2.4
+
 ## v0.2.1 - 2023-07-30
 
 - lower Laravel version requirement from 10.x to 8.x
