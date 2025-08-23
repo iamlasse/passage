@@ -15,7 +15,9 @@ class PassageController extends Controller
     /** @var string */
     private const URL_SEPARATOR = '/';
 
-    public function __construct(protected PassageServiceInterface $passageService) {}
+    public function __construct(
+        protected readonly PassageServiceInterface $passageService
+    ) {}
 
     public function index(Request $request): JsonResponse
     {

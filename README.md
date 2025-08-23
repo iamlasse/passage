@@ -21,8 +21,11 @@ This is a powerful API Gateway package for Laravel that allows you to efficientl
 
 ## Requirements
 
-- PHP version 8.1 or higher
-- Laravel version 8.x or higher
+- PHP version 8.2 or higher (8.3+ recommended)
+- Laravel version 11.x or higher
+
+> **Note**
+> - PHP 8.1 and Laravel 10.x and below are no longer supported as of v2.0.0. For older PHP and Laravel support, please use [v1.2.4](https://github.com/morcen/passage/releases/tag/v1.2.4) of this package.
 
 ## Installation
 
