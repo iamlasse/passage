@@ -55,8 +55,8 @@ class PassageServiceProvider extends PackageServiceProvider
                 Route::any('{any?}', [PassageController::class, 'index'])->where('any', '.*');
             });
 
-            $services = $passage['services'];
-            $globalOptions = $passage['options'];
+            $services = $passage['services'] ?? [];
+            $globalOptions = $passage['options'] ?? [];
             foreach ($services as $service => $handler) {
                 $this->handlerCheckpoint($handler, $service);
                 $options = $this->extractOptions($handler);

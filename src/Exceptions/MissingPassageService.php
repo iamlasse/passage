@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace Morcen\Passage\Exceptions;
 
 use Exception;
 

@@ -3,5 +3,5 @@
 use Illuminate\Support\Facades\Route;
 
 it('has macro set', function () {
-    $this->asserTTrue(Route::hasMacro('passage'));
+    $this->assertTrue(Route::hasMacro('passage'));
 });
